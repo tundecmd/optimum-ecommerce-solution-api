@@ -35,6 +35,11 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    role: {
+        type: String,
+        enum: ['admin', 'user'],
+        default: 'user'
+    },
     contactNumber: {
         type: String
     },
@@ -44,5 +49,21 @@ const userSchema = new mongoose.Schema({
 }, {
     timestamps: true
 })
+
+
+userSchema.methods = {
+    authentication: async function (password) {
+        return await bcrypt.compare(password, this.password)
+    }
+}
+
+userSchema.virtual("fullName")
+            .get(function () {
+                return `${this.firstName} ${this.lastName}`;
+            })
+
+
+
+
 
 module.exports = mongoose.model("User", userSchema);

@@ -9,8 +9,10 @@ require("dotenv").config();
 app.use(express.json());
 // routes
 const authRoutes = require("./routes/auth");
+const adminRoutes = require("./routes/admin/auth");
 
-app.use("/api", authRoutes)
+app.use("/api", authRoutes);
+app.use("/api/admin", adminRoutes);
 
 
 mongoose

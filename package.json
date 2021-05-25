@@ -1,0 +1,37 @@
+{
+  "name": "optimum-ecommerce-solution-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.server.js",
+  "scripts": {
+    "dev": "nodemon ./src/index.server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tundecmd/optimum-ecommerce-solution-api.git"
+  },
+  "keywords": [
+    "optimum",
+    "mern",
+    "ecommerce",
+    "api"
+  ],
+  "author": "optimum",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tundecmd/optimum-ecommerce-solution-api/issues"
+  },
+  "homepage": "https://github.com/tundecmd/optimum-ecommerce-solution-api#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.11.1",
+    "mongoose": "^5.12.10",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}

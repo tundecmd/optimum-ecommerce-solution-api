@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 
 
 exports.signup = (req, res) => {
-    //console.log('hiiiiii');
+    
     User.findOne({ email: req.body.email })
         .exec( async (error, user) => {
                 if (user) {
@@ -20,13 +20,13 @@ exports.signup = (req, res) => {
                     password
                 } = req.body;
 
-                const hash_password = await bcrypt.hash(password, 10)
+                const hashedPassword = await bcrypt.hash(password, 10)
 
                 const _user = new User({
                     firstName,
                     lastName,
                     email,
-                    password: hash_password,
+                    password: hashedPassword,
                     username: email.split("@")[0]
                 });
         
@@ -46,11 +46,6 @@ exports.signup = (req, res) => {
             }
         )
 }
-
-// fetch req.password
-    // compare
-    // 
-
 
 exports.signin = (req, res) => {
 
@@ -82,5 +77,3 @@ exports.signin = (req, res) => {
         )
 
 } 
-
-

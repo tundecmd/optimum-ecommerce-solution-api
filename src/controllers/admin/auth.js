@@ -84,4 +84,9 @@ exports.adminSignin = (req, res) => {
 
 } 
 
-
+exports.adminSignout = (req, res) => {
+    res.clearCookie("token");
+    res.status(200).json({
+        message: "Signout successfully ..."
+    })
+}
